@@ -76,7 +76,7 @@ enabled = true
 ## Comments
 [comments]
 enabled = true
-provider = "disqus"
+provider = "giscus"
 
 [comments.disqusjs]
 shortname = ""
@@ -127,11 +127,11 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
+repo = "MySetsuna/mysetsuna.github.io"
+repoID = "R_kgDOLVJ8Bg"
+category = "Show and tell"
+categoryID = "DIC_kwDOLVJ8Bs4Cdg5x"
+mapping = "pathname"
 lightTheme = ""
 darkTheme = ""
 reactionsEnabled = 1
