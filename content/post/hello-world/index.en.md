@@ -10,7 +10,7 @@ categories:
 tags:
     - theme
     - Stack
-weight: 99      # You can add weight to some posts to override the default sorting (date descending)
+weight: 0      # You can add weight to some posts to override the default sorting (date descending)
 ---
 
 Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!
