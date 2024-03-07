@@ -2,7 +2,7 @@
 title: JavaScript数组的常用方法——slice（切片）
 description: 数组slice的一些基础用法
 date: 2024-03-08T01:10:57+08:00
-image: 
+image: slice.png
 math: 
 license: 
 hidden: false
