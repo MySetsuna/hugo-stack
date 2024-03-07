@@ -1,7 +1,7 @@
 ---
 title: Hugo
 description: 雨果
-image:
+image: cover.jpg
 
 # Badge style
 style:
