@@ -4,7 +4,6 @@ description:
 date: 2024-03-11T22:36:29+08:00
 image: 
 math: 
-link: https://course.rs/basic/trait/trait.html
 license: 
 hidden: false
 comments: true
@@ -13,7 +12,10 @@ categories:
     - Rust基础
 tags: 
     - Rust
+    - Rust语言圣经（Rust Course）
 ---
+
+—— 本文内容从<a href="https://course.rs/basic/trait/trait.html">《Rust语言圣经（Rust Course）》</a>中归纳
 
 ## 特征 Trait
 
@@ -248,4 +250,3 @@ let s = 3.to_string();
 
 未完...
 
-—— 本文内容从《Rust语言圣经（Rust Course）》中归纳
