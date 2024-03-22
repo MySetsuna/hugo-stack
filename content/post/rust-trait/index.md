@@ -13,6 +13,7 @@ categories:
 tags: 
     - Rust
     - Rust语言圣经（Rust Course）
+weight: 99
 ---
 
 —— 本文内容从<a href="https://course.rs/basic/trait/trait.html">《Rust语言圣经（Rust Course）》</a>中归纳
@@ -246,6 +247,87 @@ impl<T: Display> ToString for T {
 //任何实现了Display的特征的类型调用由ToString定义的to_string方法。
 
 let s = 3.to_string();
+```
+
+## 函数中返回 impl Trait
+
+可以通过`impl Trait`来说明一个函数返回了实习了指定Trait的类型
+
+```rust
+fn returns_summarizable() -> impl Summary {
+    Weibo {
+        username: String::from("sunface"),
+        content: String::from(
+            "m1 max太厉害了，电脑再也不会卡",
+        )
+    }
+}
+```
+
+注意，这里只能让函数调用者知道，函数的返回值实现了`Summary`这个Trait，却没有告知调用者，返回值的具体类型。
+这种写法在返回类型特别复杂，无法明确定义的情况下特别有用，但是要注意的是：
+***返回值只能是一种具体类型***，例如
+
+```rust
+fn returns_summarizable(switch: bool) -> impl Summary {
+    if switch {
+        Post {
+            title: String::from (
+                "Penguins win the Stanley Cup Championship!",
+            ),
+            author: String::from("Iceburgh"),
+            content: String::from(
+                "The Pittsburgh Penguins once again are then best
+                hockey team in the NHL.",
+            )
+        }
+    } else {
+        Weibo {
+            username: String::from("horse_ebooks"),
+            content: String::from(
+                "of course,as you probaly alread knoew,people",
+            )
+        }
+    }
+}
+```
+
+以上代码无法通过编译，因为返回了不同的类型。如果想实现返回不同的类型，需要使用下一章节中的<a href="/p/rust-trait-object/">**特征对象**</a>
+
+## 修复上一节中largest函数
+
+上一节例子中编译报错问题 // todo
+
+```rust
+fn largest<T>(list: &[T]) -> T {
+    let mut largest = list[0];
+
+    fro &item in list.iter() {
+        if item > largest {
+            largest = item;
+        }
+    }
+    largest
+}
+
+fn main() {
+    let number =_list =vec![34, 58, ]
+}
+
+
+error[E0369]: binary operation `>` cannot be applied to type `T` // 无法在 `T` 类型上应用`>`运算符
+ --> src/main.rs:5:17
+  |
+5 |         if item > largest {
+  |            ---- ^ ------- T
+  |            |
+  |            T
+  |
+help: consider restricting type parameter `T` // 考虑使用以下的特征来约束 `T`
+  |
+1 | fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> T {
+  |             ^^^^^^^^^^^^^^^^^^^^^^
+
 ```
 
 未完...
