@@ -7,6 +7,12 @@ math:
 license: 
 hidden: false
 comments: true
+categories:
+    - 数据结构
+tags: 
+    - 学习
+    - 算法
+    - 数据结构
 ---
 
 ## 定义
