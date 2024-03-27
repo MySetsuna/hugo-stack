@@ -247,6 +247,29 @@ fn main() {
 ```rust
 fn main() {
     let screen = Screen {
-        
-    }
+        components: vec!{
+            Box::new(String::from("Hi")),
+        },
+    };
 }
+```
+
+因为String类型没有实现Draw特征，编译器直接就会报错，不会让上述代码运行。如果想要String类型被渲染在屏幕上，只需要为其实现Draw特征即可。
+
+注意dyn不能单独作为特征对象的定义。特征对象可以是任意实现了每个特征的类型，编译器在编译期间不知道该类型的大小。不同类型的大小是不同的。
+
+&dyn 和 Box<dyn> 在编译期都是已知大小。
+
+```rust
+fn draw2(x: dyn Draw) {
+    x.draw();
+}
+
+10 | fn draw2(x: dyn Draw) {
+   |          ^ doesn't have a size known at compile-time
+   |
+   = help: the trait `Sized` is not implemented for `(dyn Draw + 'static)`
+help: function arguments must have a statically known size, borrowed types always have a known size
+```
+
+## 特征对象的动态分发
