@@ -95,3 +95,8 @@ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
 
 
 
+## 加入HeadlessUI/heroiconss依赖
+
+```shell
+yarn add @headlessui/react @heroicons/react
+```

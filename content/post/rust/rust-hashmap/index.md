@@ -10,7 +10,7 @@ comments: true
 draft: true
 language: 汉语
 categories:
-    - Rust基础
+    - Rust
 tags: 
     - Rust
     - Rust语言圣经（Rust Course）
