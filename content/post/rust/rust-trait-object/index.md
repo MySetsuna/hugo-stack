@@ -13,7 +13,7 @@ categories:
 tags: 
     - Rust
     - Rust语言圣经（Rust Course）
-weight: 98
+weight: 0
 ---
 
 在上一节中有一段代码无法通过边缘：

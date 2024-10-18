@@ -13,7 +13,7 @@ categories:
 tags: 
     - Rust
     - Rust语言圣经（Rust Course）
-weight: 99
+weight: 0
 ---
 
 —— 本文内容从<a href="https://course.rs/basic/trait/trait.html">《Rust语言圣经（Rust Course）》</a>中归纳

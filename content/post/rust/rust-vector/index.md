@@ -14,7 +14,7 @@ categories:
 tags: 
     - Rust
     - Rust语言圣经（Rust Course）
-weight: 96
+weight: 0
 ---
 
 ## 创建动态数组

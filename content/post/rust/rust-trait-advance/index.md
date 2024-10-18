@@ -13,7 +13,7 @@ categories:
 tags: 
     - Rust
     - Rust语言圣经（Rust Course）
-weight: 97
+weight: 0
 draft: false
 ---
 
