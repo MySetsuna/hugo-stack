@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习 on Jack Jiang'Blog</title><link>https://mysetsuna.github.io/tags/%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 学习 on Jack Jiang'Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 21 Mar 2024 23:07:31 +0800</lastBuildDate><atom:link href="https://mysetsuna.github.io/tags/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>数据结构第一讲：基本概念（一）——什么是数据结构</title><link>https://mysetsuna.github.io/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E8%AE%B2%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link><pubDate>Thu, 21 Mar 2024 23:07:31 +0800</pubDate><guid>https://mysetsuna.github.io/p/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC%E4%B8%80%E8%AE%B2%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid><description>&lt;h2 id="定义">定义
+&lt;/h2>&lt;p>数据结构是数据对象，以及存在于该对象的实例和组成实例的数据元素之间的各种联系。这些联系可以通过定义相关的函数来给出 。
+&amp;mdash;&amp;ndash;Sartaj Sahni, 《数据结构、算法与应用》&lt;/p>
+&lt;p>数据结构是ADT(抽象数据类型Abstract Data Type)的物理实现
+&amp;mdash;&amp;ndash;Cliffor A.Shaffer, 《数据结构与算法分析》&lt;/p>
+&lt;p>数据结构（data structure）是计算机中存储、组织数据的方式。通常情况下，精心选择的数据结构可以带来最优效率的算法。
+&amp;mdash;中文维基百科&lt;/p>
+&lt;h2 id="例一书架如何放书">例一：书架如何放书
+&lt;/h2>&lt;h3 id="方法一-随便发">方法一 随便发
+&lt;/h3>&lt;ul>
+&lt;li>哪里有空放哪&lt;/li>
+&lt;li>找书是个噩梦&lt;/li>
+&lt;/ul>
+&lt;h3 id="方法二-按照书名的拼音字母顺序排放">方法二 按照书名的拼音字母顺序排放
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>操作一：新书怎么插入&lt;/p>
+&lt;ul>
+&lt;li>如果书位置靠前，所有的书都要腾位置&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>操作二：怎么找到指定的某本书&lt;/p>
+&lt;ul>
+&lt;li>二分查找&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="方法三-把书架划分成几块区域每块区域指定拜访某种类别的图书在每种类别内按照书名的拼英字母顺序排放">方法三 把书架划分成几块区域，每块区域指定拜访某种类别的图书；在每种类别内，按照书名的拼英字母顺序排放
+&lt;/h3>&lt;ul>
+&lt;li>
+&lt;p>操作一：新书怎么插入&lt;/p>
+&lt;ul>
+&lt;li>先定类别，二分查找确定位置，移出空位&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>操作二：怎么找到指定的某本书&lt;/p>
+&lt;ul>
+&lt;li>先定类别，再二分查找&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>问题：每种书类的规模，类别大小&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="例一总结">例一总结
+&lt;/h2>&lt;p>&lt;strong>解决问题方法的效率，跟数据的组织方式有关&lt;/strong>。&lt;/p>
+&lt;h2 id="例二-写程序实现一个函数printn是的传入一个正整数为n的参数后能顺序打印从1到n的全部正整数">例二： 写程序实现一个函数PrintN，是的传入一个正整数为N的参数后，能顺序打印从1到N的全部正整数
+&lt;/h2>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 循环实现
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">PrintN&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">N&lt;/span>:&lt;span class="kt">number&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">let&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">&amp;lt;=&lt;/span>&lt;span class="nx">N&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//10万 正常打印
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 递归
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">PrintN1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">N&lt;/span>: &lt;span class="kt">number&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">N&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">PrintN1&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">N&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">N&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">//10万 内存溢出
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="例二总结">例二总结
+&lt;/h2>&lt;p>&lt;strong>解决问题方法的效率，跟空间的利用效率有关&lt;/strong>。&lt;/p>
+&lt;h2 id="例三写程序计算给定多项式在给定点x处的值">例三：写程序计算给定多项式在给定点X处的值
+&lt;/h2>&lt;p>题目：
+$$
+f(x) = a_0 +a_1x +&amp;hellip;+ a_{n -1 }x^{n-1}+a_nx^n
+$$&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">f&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">n&lt;/span>: &lt;span class="kt">number&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">a&lt;/span>:&lt;span class="kt">number&lt;/span>&lt;span class="p">[],&lt;/span> &lt;span class="nx">x&lt;/span>:&lt;span class="kt">number&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kd">let&lt;/span> &lt;span class="nx">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="o">&amp;lt;=&lt;/span>&lt;span class="nx">n&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">p&lt;/span>&lt;span class="o">+=&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">a&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="nb">Math&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">pow&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">x&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">p&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>转化为结合律
+$$
+f(x)=a_0+x(a_1 + x(&amp;hellip;(a_{n-1}+x(a_n))&amp;hellip;))
+$$&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-ts" data-lang="ts">&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">f&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">n&lt;/span>: &lt;span class="kt">number&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">a&lt;/span>:&lt;span class="kt">number&lt;/span>&lt;span class="p">[],&lt;/span> &lt;span class="nx">x&lt;/span>:&lt;span class="kt">number&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">n&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">n&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="nx">li&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">a&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">i&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">x&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">p&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="例三总结">例三总结
+&lt;/h2>&lt;p>&lt;strong>解决问题方法的效率，跟算法的巧妙程度有关。&lt;/strong>&lt;/p>
+&lt;h2 id="到底什么是数据结构">到底什么是数据结构
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>数据对象在计算机中的组织方式&lt;/p>
+&lt;ul>
+&lt;li>逻辑结构&lt;/li>
+&lt;li>物理存储结构&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>数据对象必定与一系列加在其上的操作相关联&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>完成这些操作所用的方法就是算法&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="抽象数据类型abstract-data-type">抽象数据类型（Abstract Data Type）
+&lt;/h3>&lt;ul>
+&lt;li>数据类型
+&lt;ul>
+&lt;li>数据对象集&lt;/li>
+&lt;li>数据集合相关联的操作集&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>抽象： 描述数据类型的方法不依赖于具体实现
+&lt;ul>
+&lt;li>与存放数据的机器无关&lt;/li>
+&lt;li>与数据存储的物理结构无关&lt;/li>
+&lt;li>与实现操作的算法和编程语言无关&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>只描述数据对象集合相关操作集&lt;code>是什么&lt;/code>，并不涉及&lt;code>如何做到&lt;/code>的问题&lt;/p>
+&lt;h2 id="例四-矩阵的抽象数据类型定义">例四 &lt;code>矩阵&lt;/code>的抽象数据类型定义
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>类型名称：矩阵（Matrix）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数据对象集：一个M×N的矩阵 $A_{m×n}=(a_{ij})(i=1,&amp;hellip;,M;j=1,&amp;hellip;,N)$ 由M×N个三元组&amp;lt;a,i,j&amp;gt;构成，其中a是矩阵元素的值，i是元素所在的行号，j是元素所在的列号&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>操作集：对于任意矩阵A, B, C c Matrix, 以及整数i、j、M、N&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Matrix Create (int M, int N )&lt;/code>:返回一个M×N的空矩阵；&lt;/li>
+&lt;li>&lt;code>int GetMaxRow(Matrix A)&lt;/code>: 返回矩阵A的总行数；&lt;/li>
+&lt;li>&lt;code>int GetMaxCol(Matrix A)&lt;/code>: 返回矩阵A的总列数；&lt;/li>
+&lt;li>&lt;code>ElementType GetEntry(Matrix A, int i, init j)&lt;/code>: 返回矩阵A的第i行、第j列的元素；&lt;/li>
+&lt;li>&lt;code>Matrix Add(Matrix A, Matrix B)&lt;/code>: 如果A和B的行、列数一致，则返回矩阵C=A+B, 否则返回错误标志；&lt;/li>
+&lt;li>&lt;code>Matrix Multiply(Matrix A, Matrix B)&lt;/code>: 如果A的列数等于B的行数，则返回矩阵C=AB，否则返回错误标志；&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>
