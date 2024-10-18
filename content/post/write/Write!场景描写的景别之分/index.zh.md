@@ -12,7 +12,7 @@ links:
 license: 
 hidden: false
 comments: true
-image: index.jpg
+image: write1.jpg
 language: 汉语
 categories:
     - 写作！
